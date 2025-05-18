@@ -1,0 +1,88 @@
+{
+  "Кровати": {
+    "С подъемным механизмом": [
+      {
+        "name": "Кровать Askona Marlena",
+        "description": "Современная кровать с мягким изголовьем и подъемным механизмом для хранения.",
+        "image": "https://www.askona.ru/upload/iblock/bac/baccb63771b1d5c3d34dbe6e33c8b15d.jpg",
+        "link": "https://www.askona.ru/krovati/krovati-pm/marlena/"
+      },
+      {
+        "name": "Кровать Hoff Roma",
+        "description": "Элегантная кровать с подъемным механизмом и вместительным ящиком.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/800/800_800_1/800d109fce41601f94d73a2c01228b4a.jpg",
+        "link": "https://hoff.ru/catalog/spalnya/krovati/krovati_s_podemnym_mehanizmom/roma/"
+      }
+    ],
+    "Двуспальные": [
+      {
+        "name": "Кровать Askona Grace",
+        "description": "Классическая двуспальная кровать с изысканным дизайном.",
+        "image": "https://www.askona.ru/upload/iblock/537/537b2bfc28aaf4a6c34f6c43c6c6f119.jpg",
+        "link": "https://www.askona.ru/krovati/grace/"
+      },
+      {
+        "name": "Кровать Hoff Astra",
+        "description": "Современная двуспальная кровать с высоким изголовьем.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/137/800_800_1/137b47395f40e8e30a0ea76d114c87e5.jpg",
+        "link": "https://hoff.ru/catalog/spalnya/krovati/dvuspalnye_krovati/astra/"
+      }
+    ],
+    "Односпальные": [
+      {
+        "name": "Кровать Askona Story Pro",
+        "description": "Компактная односпальная кровать для небольших помещений.",
+        "image": "https://www.askona.ru/upload/iblock/709/709e98c8d2f99443e9ce3191c3ec5b6e.jpg",
+        "link": "https://www.askona.ru/krovati/story-pro/"
+      },
+      {
+        "name": "Кровать Hoff Uno",
+        "description": "Стильная односпальная кровать с прочным каркасом.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/eda/800_800_1/eda69ccbb241ef28d5d6bb7ca5e003e3.jpg",
+        "link": "https://hoff.ru/catalog/spalnya/krovati/odnospalnye_krovati/uno/"
+      }
+    ]
+  },
+  "Матрасы": {
+    "Ортопедические": [
+      {
+        "name": "Матрас Askona Terapia Cardio",
+        "description": "Ортопедический матрас для поддержки позвоночника.",
+        "image": "https://www.askona.ru/upload/iblock/f2e/f2e34e9dc672c4271628c6b2cd7e29ba.jpg",
+        "link": "https://www.askona.ru/mattresses/terapia-cardio/"
+      },
+      {
+        "name": "Матрас Hoff Comfort Plus",
+        "description": "Удобный ортопедический матрас средней жесткости.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/379/800_800_1/37972fda85959a9b32d7cda7e2ebde42.jpg",
+        "link": "https://hoff.ru/catalog/spalnya/matrasy/ortopedicheskie_matrasy/comfort_plus/"
+      }
+    ],
+    "Детские": [
+      {
+        "name": "Матрас Askona Baby Flex Jump",
+        "description": "Безопасный и мягкий детский матрас для малышей.",
+        "image": "https://www.askona.ru/upload/iblock/36c/36c9dcbca443347306dd0c8c5e7f6f51.jpg",
+        "link": "https://www.askona.ru/mattresses/baby-flex-jump/"
+      }
+    ]
+  },
+  "Диваны": {
+    "Классические": [
+      {
+        "name": "Диван Hoff Ретро",
+        "description": "Классический диван для гостиной.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/24a/800_800_1/24a38160a19b7a95a46a93d67a83512f.jpg",
+        "link": "https://hoff.ru/catalog/gostinaya/divany/klassicheskie/retro/"
+      }
+    ],
+    "Угловые": [
+      {
+        "name": "Диван Hoff Уют-угол",
+        "description": "Большой угловой диван для семьи.",
+        "image": "https://hoff.ru/upload/resize_cache/iblock/1a2/800_800_1/1a2cc5c44a76a6f73ed58255328c0739.jpg",
+        "link": "https://hoff.ru/catalog/gostinaya/divany/uglovye/uyut_ugol/"
+      }
+    ]
+  }
+}
