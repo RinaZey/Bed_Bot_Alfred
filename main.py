@@ -13,7 +13,7 @@ from sentiment import get_sentiment
 from wikipedia_utils import get_wiki_articles
 from photo_utils import blur_text, add_text, add_image, apply_filter
 
-TOKEN = '7843838104:AAHSMEIeLhAMP5tU8PopB1CGIL79hQGFM6w'
+TOKEN = ''
 nltk.download('punkt')
 
 with open('intents_dataset.json', 'r', encoding='utf-8') as f:
