@@ -13,7 +13,7 @@ from sentiment import get_sentiment
 from wikipedia_utils import get_wiki_articles
 from photo_utils import blur_text, add_text, add_image, apply_filter
 
-TOKEN = ''
+TOKEN = '7843838104:AAHSMEIeLhAMP5tU8PopB1CGIL79hQGFM6w'
 nltk.download('punkt')
 
 with open('intents_dataset.json', 'r', encoding='utf-8') as f:
@@ -150,6 +150,22 @@ def handle_text(update: Update, context: CallbackContext):
         reply_markup=main_keyboard()
     )
 
+def format_product_caption(item):
+    # Экранирование спецсимволов MarkdownV2
+    def esc(txt):
+        special = r'\_*[]()~`>#+-=|{}.!'
+        return ''.join(f'\\{c}' if c in special else c for c in txt)
+    name = esc(item["name"])
+    description = esc(item["description"])
+    price = esc(item.get("price", ""))
+    # Форматируем надписи и значения
+    caption = (
+        f"*Название:*\n*{name}*\n\n"
+        f"*Описание:*\n{description}\n\n"
+        f"*Цена:*\n_*{price} ₽*_"
+    )
+    return caption
+
 def handle_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     user_id = str(query.from_user.id)
@@ -170,19 +186,17 @@ def handle_callback(update: Update, context: CallbackContext):
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("Подробнее", url=item["link"])]])
             img = item["image"]
             try:
-                # Локальный файл
                 if os.path.exists(img):
                     with open(img, "rb") as photo:
-                        query.message.reply_photo(photo, caption=f'{item["name"]}\n{item["description"]}', reply_markup=btn)
-                # Прямая ссылка на изображение
-                elif img.startswith("http") and (img.endswith(".jpg") or img.endswith(".jpeg") or img.endswith(".png")):
-                    query.message.reply_photo(img, caption=f'{item["name"]}\n{item["description"]}', reply_markup=btn)
+                        query.message.reply_photo(photo, caption=format_product_caption(item), reply_markup=btn, parse_mode="MarkdownV2")
+                elif img.startswith("http") and (img.endswith(".jpg") or img.endswith(".jpeg") or img.endswith(".png") or img.endswith(".webp")):
+                    query.message.reply_photo(img, caption=format_product_caption(item), reply_markup=btn, parse_mode="MarkdownV2")
                 else:
                     query.message.reply_text(f'{item["name"]}\n{item["description"]}', reply_markup=btn)
             except Exception as e:
                 print(f"Ошибка при отправке фото: {e}")
                 query.message.reply_text(f'{item["name"]}\n{item["description"]}\n(фото недоступно)', reply_markup=btn)
-        query.message.reply_text("Выбери действие:", reply_markup=main_keyboard())
+                query.message.reply_text("Выбери действие:", reply_markup=main_keyboard())
     elif data == "music":
         keyboard = [[InlineKeyboardButton(genre, callback_data=f"music_{genre}")] for genre in MUSIC]
         query.edit_message_text("Выбери жанр музыки:", reply_markup=InlineKeyboardMarkup(keyboard))
